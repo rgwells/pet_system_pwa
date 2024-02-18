@@ -1,0 +1,19 @@
+{
+    "name": "digital_alchemyst/pet_system",
+    "description": "Pandemonium Pet System",
+    "license": "MIT",
+    "require": {
+        "ext-mysqli": "*",
+        "ext-pdo": "*",
+        "ext-curl": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "10"
+    },
+    "autoload":{
+        "psr-0":{
+            "C:\\Users\\russe\\projects\\pandemonium\\pand_pet_system":""
+        }
+    }
+
+}

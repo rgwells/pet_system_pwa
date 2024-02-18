@@ -1,0 +1,13 @@
+
+
+### get food list
+POST http://localhost:8080/pet/api/food_data.php
+Content-Type: application/json
+
+{
+    "type":"food_list"
+}
+
+> {%
+    client.log (response.body);
+%}

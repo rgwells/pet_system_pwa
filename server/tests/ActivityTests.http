@@ -1,0 +1,16 @@
+
+
+###  quest activity
+POST http://localhost:8080/pet/api/pet_data.php
+Content-Type: application/json
+
+{
+    "type": "save_activity",
+    "petId": "1",
+    "activity": "quest",
+    "avId": "06340496-1003-4399-a131-84bbc321dc87"
+}
+
+> {%
+    client.log (response.body);
+%}

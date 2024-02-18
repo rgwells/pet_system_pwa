@@ -1,0 +1,14 @@
+###  get specified pet or first pet
+POST http://localhost:8080/pet/api/pet_data.php
+Content-Type: application/json
+
+{
+    "type":"get_pet",
+    "petId":"-1",
+    "avId": "06340496-1003-4399-a131-84bbc321dc87"
+}
+
+> {%
+    client.log (response.body);
+%}
+

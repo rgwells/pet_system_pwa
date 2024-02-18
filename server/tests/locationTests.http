@@ -1,0 +1,139 @@
+### register habitat
+POST http://localhost:8080/pet/api/location.php
+Content-Type: application/json
+
+{
+    "type":"register_habitat",
+    "reg_id":"424",
+    "name":"test",
+    "dispenser_type":"dispenser",
+    "habitat":"Graveyard",
+    "region":"Pandemonium",
+    "coordinate":"<68.13295, 200.28010, 57.31347>",
+    "area":"65536",
+    "parcel_id":"1af35e58-e3b7-b432-d1f9-44cb9570773f",
+    "texture_id":"9207cbef-fc6f-c4fd-d6a7-7728c8f22944",
+    "dispenser_version": "0.1"
+}
+
+> {%
+    client.log (response.body);
+%}
+
+
+### unregister
+POST http://localhost:8080/pet/api/location.php
+Content-Type: application/json
+
+{
+    "type": "unregister_habitat",
+    "reg_id": "424",
+    "dispenser_type": "dispenser",
+    "habitat": "Graveyard",
+    "region": "Pandemonium",
+    "parcel_id": "1af35e58-e3b7-b432-d1f9-44cb9570773f"
+}
+
+> {%
+    client.log (response.body);
+%}
+
+
+###  user location
+POST http://localhost:8080/pet/api/location.php
+Content-Type: application/json
+
+{
+    "type":"user_location",
+    "uuid":"06340496-1003-4399-a131-84bbc321dc87",
+    "region":"Pandemonium",
+    "parcel_id": "1af35e58-e3b7-b432-d1f9-44cb9570773f",
+    "url": "http://simhost-07ad1080b06c4e988.agni.secondlife.io:12046/cap/4d57eca5-dd20-74bd-8cbc-0991f26f8e3b",
+    "coordinate":"<64.82730, 207.75650, 55.79650>",
+    "version": "1.0.0.0"
+}
+
+> {%
+    client.log (response.body);
+%}
+
+###  get habitats
+POST http://localhost:8080/pet/api/location.php
+Content-Type: application/json
+
+{
+    "type":  "get_habitats",
+    "region": "Pandemonium",
+    "coordinate": "<73.0, 200.0, 56.0000>"
+}
+
+
+> {%
+    client.log (response.body);
+%}
+
+### get random habitat1
+POST http://localhost:8080/pet/api/location.php
+Content-Type: application/json
+
+{
+    "type":  "get_random_habitat",
+    "habitat_type": "Hell",
+    "count": "1"
+}
+
+
+> {%
+    client.log (response.body);
+%}
+
+
+### get random habitat2
+POST http://localhost:8080/pet/api/location.php
+Content-Type: application/json
+
+{
+    "type":  "get_random_habitat",
+    "habitat_type": "",
+    "count": "1"
+}
+
+
+> {%
+    client.log (response.body);
+%}
+
+
+
+### get random habitat pic
+POST http://localhost:8080/pet/api/location.php
+Content-Type: application/json
+
+{
+    "type":  "get_random_habitat_pic",
+    "region": "Pandemonium"
+}
+
+
+> {%
+    client.log (response.body);
+%}
+
+
+### update habitat slvalue
+POST http://localhost:8080/pet/api/location.php
+Content-Type: application/json
+
+{
+    "type":  "update_habitat_sl",
+    "regNum": "r12",
+    "slValue": "12345",
+    "dispenser_version": "0.1"
+}
+
+
+> {%
+    client.log (response.body);
+%}
+
+

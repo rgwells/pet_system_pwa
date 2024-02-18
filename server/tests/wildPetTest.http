@@ -1,0 +1,23 @@
+
+###  generate random pets
+POST http://localhost:8080/pet/api/pet_data.php
+Content-Type: application/json
+
+{
+    "type":"generate_wild_pets"
+}
+
+> {%
+    client.log (response.body);
+%}
+
+###  get get wild pet
+GET http://localhost:8080/pet/api/pet_data.php?type=get_wild_pet
+Content-Type: application/json
+
+
+> {%
+    client.log (response.body);
+%}
+
+

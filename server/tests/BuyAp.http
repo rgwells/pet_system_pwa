@@ -1,0 +1,15 @@
+
+
+### buy_ap
+POST http://localhost:8080/pet/api/buy_ap.php
+Content-Type: application/json
+
+{
+    "type": "buy_ap",
+    "avId": "06340496-1003-4399-a131-84bbc321dc87",
+    "amount": "100"
+}
+
+> {%
+    client.log (response.body);
+%}
