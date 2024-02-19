@@ -9,11 +9,11 @@ include_once __DIR__ . "/../modules/Habitat.php";
 include_once __DIR__ . "/../modules/HabitatLocation.php";
 include_once __DIR__ . "/../modules/Settings.php";
 
-use modules\Partner;
-use modules\PetOwner;
-use modules\Habitat;
-use modules\HabitatLocation;
-use modules\Settings;
+use server\modules\Partner;
+use server\modules\PetOwner;
+use server\modules\Habitat;
+use server\modules\HabitatLocation;
+use server\modules\Settings;
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 

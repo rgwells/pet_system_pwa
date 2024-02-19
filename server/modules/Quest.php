@@ -3,7 +3,7 @@
 namespace {
     include_once __DIR__ . "/../inc/config.php";
 }
-namespace modules {
+namespace server\modules {
 
     use PDO;
     use PDOException;

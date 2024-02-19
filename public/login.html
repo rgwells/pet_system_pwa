@@ -8,11 +8,23 @@
     <!--<link rel="stylesheet" href="css/style.css">-->
 	<script src="https://accounts.google.com/gsi/client" async></script>
 
+	<!--
+	see  https://console.cloud.google.com/apis/credentials
+	407409119433-dvve62sdm0ju24p6sgojo79g0fhn0mqi.apps.googleusercontent.com
+	-->
+
     <title>Pandemon Login</title>
 
 	<script>
 	function loadContext ()
 	{
+		let email = localStorage.getItem("pandemon/email");
+		console.log ("auth name: " + email);
+		email = email.trim();
+		if (email !== "") {
+			// sign in, there is a cached name for the user.
+			window.location.replace ('index.html');
+		}
 	}
 
 
@@ -22,11 +34,11 @@
 		let host = location.protocol.concat("//").concat(window.location.host);
 		let path = window.location.pathname;
 		path = path.replace("public/login.html", "");
-		path = path + "api/auth_init.php";
+		path = path + "server/api/auth_init.php";
 
 
-		let value = localStorage.getItem("pandemon/name");
-		console.log ("test: " + value)
+		let email = localStorage.getItem("pandemon/email");
+		console.log ("auth name: " + email);
 
 
 		// Post JWT token to server-side
@@ -40,27 +52,13 @@
 			if(data.status === 1) {
 				let responsePayload = data.pdata;
 
-				if (value === null)
+				if (email === null)
 				{
+					localStorage.setItem("pandemon/email", responsePayload.email);
 					localStorage.setItem("pandemon/name", responsePayload.name);
 				}
-
-				// Display the user account data
-				let profileHTML = '<h3><a href="javascript:void(0);" onclick="signOut(' +
-						responsePayload.sub +
-						');">Sign out</a></h3>';
-
-				//profileHTML += '<img src="'+responsePayload.picture+'"/><p><b>Auth ID: </b>'+responsePayload.sub+'</p><p><b>Name: </b>'+responsePayload.name+'</p><p><b>Email: </b>'+responsePayload.email+'</p>';
-				profileHTML += '<p><b>Auth ID: </b>' +
-						responsePayload.sub +
-						'</p><p><b>Name: </b>' +
-						responsePayload.name +
-						'</p><p><b>Email: </b>' +
-						responsePayload.email +
-						'</p>';
-				document.getElementsByClassName("pro-data")[0].innerHTML = profileHTML;
-				document.querySelector(".pro-data").classList.remove("hidden");
-
+				// sign in, there is a cached name for the user.
+				window.location.replace ('index.html');
 			}
 		})
 		.catch(console.error);

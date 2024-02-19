@@ -4,7 +4,7 @@
 require_once '../inc/config.php';
 include_once __DIR__ . "/../modules/Food.php";
 
-use modules\Food;
+use server\modules\Food;
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 

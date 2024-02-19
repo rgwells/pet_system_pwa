@@ -1,8 +1,8 @@
 <?php
 
 use PHPUnit\Framework\TestCase;
-use modules\PetActivity;
-use modules\Pet;
+use server\modules\PetActivity;
+use server\modules\Pet;
 
 include_once "..\modules\PetActivity.php";
 include_once "..\modules\Pet.php";

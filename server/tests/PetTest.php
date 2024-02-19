@@ -3,7 +3,7 @@
 include_once "..\modules\Pet.php";
 
 use PHPUnit\Framework\TestCase;
-use modules\Pet;
+use server\modules\Pet;
 
 
 

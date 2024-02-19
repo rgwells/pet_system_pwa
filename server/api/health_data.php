@@ -5,8 +5,8 @@ require_once '../inc/config.php';
 include_once __DIR__ . "/../modules/ApSupport.php";
 include_once __DIR__ . "/../modules/Pet.php";
 
-use modules\ApSupport;
-use modules\Pet;
+use server\modules\ApSupport;
+use server\modules\Pet;
 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {

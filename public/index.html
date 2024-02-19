@@ -19,6 +19,14 @@
 			navigator.serviceWorker.register('service_worker.js', { scope: `${uri}/` });
 		}
 
+		let email = localStorage.getItem("pandemon/email");
+		let name = localStorage.getItem("pandemon/name");
+		let avId = localStorage.getItem("pandemon/avid");
+		console.log ("email:" + email);
+		console.log ("name:" + name);
+		console.log ("acId:" + avId);
+
+
 		let healthColors = { };
 
         let screenInfo = [
@@ -243,7 +251,7 @@
                 e.innerHTML = food.type;
             }
 
-			loadOwner ();
+			loadOwner (email, avId);
 			loadFoodInfo ();
 			loadTrainInfo ();
 			updateAttributeFilter();
@@ -475,12 +483,14 @@
         }
 
 
-		function loadOwner ()
+		function loadOwner (ownerEmail, owneravId)
 		{
 			let xhr = new XMLHttpRequest();
 			let url = getMountPoint() + "../server/api/owner_data.php";
 			let data = {
 				type: "get_owner",
+				avId: owneravId ? owneravId : '',
+				email: ownerEmail,
 			};
 
 			xhr.open ('POST', url);

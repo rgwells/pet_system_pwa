@@ -1,7 +1,7 @@
 <?php
 
-use modules\PetOwner;
-use modules\SessionData;
+use server\modules\PetOwner;
+use server\modules\SessionData;
 
 include_once __DIR__ . "/../server/inc/config.php";
 include_once __DIR__ . "/../server/modules/PetOwner.php";

@@ -4,7 +4,7 @@
 require_once '../inc/config.php';
 include_once __DIR__ . "/../modules/PetOwner.php";
 
-use modules\PetOwner;
+use server\modules\PetOwner;
 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -29,9 +29,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     else if ($type == "get_owner")
     {
-        session_start();
-        $avId = $_SESSION['avId'];
-        $owner = PetOwner::getOwner($avId);
+        $email = $obj->email;
+        $avId = $obj->avId;
+        $owner = PetOwner::getOwner($avId, $email);
         $result = $owner;
         die (json_encode($result));
     }

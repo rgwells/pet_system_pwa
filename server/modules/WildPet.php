@@ -5,12 +5,11 @@ namespace {
     include_once __DIR__ . "/../modules/HabitatLocation.php";
 }
 
-namespace modules {
+namespace server\modules {
 
     use Exception;
     use PDO;
     use PDOException;
-    use modules\HabitatLocation;
 
     class WildPet
     {

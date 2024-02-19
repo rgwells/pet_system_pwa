@@ -4,7 +4,7 @@ include_once "..\modules\Quest.php";
 
 
 use PHPUnit\Framework\TestCase;
-use modules\Quest;
+use server\modules\Quest;
 
 
 class QuestTest extends TestCase

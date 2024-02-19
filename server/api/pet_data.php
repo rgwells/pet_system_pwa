@@ -9,13 +9,13 @@ include_once __DIR__ . "/../modules/PetSpecies.php";
 include_once __DIR__ . "/../modules/Saying.php";
 include_once __DIR__ . "/../modules/WildPet.php";
 
-use modules\LocationRequest;
-use modules\Pet;
-use modules\PetOwner;
-use modules\PetActivity;
-use modules\PetTemplate;
-use modules\Saying;
-use modules\WildPet;
+use server\modules\LocationRequest;
+use server\modules\Pet;
+use server\modules\PetOwner;
+use server\modules\PetActivity;
+use server\modules\PetTemplate;
+use server\modules\Saying;
+use server\modules\WildPet;
 
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
 

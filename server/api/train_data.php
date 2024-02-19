@@ -4,7 +4,7 @@
 require_once '../inc/config.php';
 include_once __DIR__ . "/../modules/Train.php";
 
-use modules\Train;
+use server\modules\Train;
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
