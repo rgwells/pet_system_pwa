@@ -9,14 +9,11 @@ namespace {
 
 
 
-namespace modules {
+namespace server\modules {
 
     use Exception;
-    use modules\PetTemplate;
     use PDO;
     use PDOException;
-    use modules\Pet;
-    use modules\Patreon;
 
     class PetOwner
     {
@@ -36,7 +33,7 @@ namespace modules {
         public int $apMax = 5;
 
 
-        public static function getOwner(string $av) : PetOwner
+        public static function getOwner(string $av, string $email = "") : PetOwner
         {
             // all return data will be pushed into this array
             $obj = new PetOwner ();
@@ -44,11 +41,17 @@ namespace modules {
             try {
                 $pdo = new PDO(\DB_DSN, \DB_USERNAME, \DB_PASSWORD, \DB_OPTIONS);
 
-                $sql = 'select * from ps_avatar_info_view where avuuid = :avatar';
-                $stmt = $pdo->prepare($sql);
-                $stmt->bindParam(':avatar', $av, PDO::PARAM_STR);
+                if ($av) {
+                    $sql = 'select * from ps_avatar_info_view where avuuid = :avatar';
+                    $stmt = $pdo->prepare ($sql);
+                    $stmt->bindParam (':avatar', $av, PDO::PARAM_STR);
+                }
+                else {
+                    $sql = 'select * from ps_avatar_info_view where email = :email';
+                    $stmt = $pdo->prepare ($sql);
+                    $stmt->bindParam (':email', $email, PDO::PARAM_STR);
+                }
                 $stmt->execute();
-
                 if ($stmt->rowCount() > 0) {
                     $row = $stmt->fetch();
                     $obj = PetOwner::loadFromRow ($row);

@@ -6,10 +6,10 @@ include_once __DIR__ . "/../modules/QuestChoice.php";
 include_once __DIR__ . "/../modules/StatTest.php";
 include_once __DIR__ . "/../modules/StatCost.php";
 
-use modules\Quest;
-use modules\QuestChoice;
-use modules\StatCost;
-use modules\StatTest;
+use server\modules\Quest;
+use server\modules\QuestChoice;
+use server\modules\StatCost;
+use server\modules\StatTest;
 
 
 if ($_SERVER["REQUEST_METHOD"] == "GET") {

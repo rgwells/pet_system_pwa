@@ -5,7 +5,7 @@ namespace {
 }
 
 
-namespace modules {
+namespace server\modules {
 
     use PDO;
     use PDOException;

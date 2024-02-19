@@ -6,9 +6,8 @@ namespace {
 }
 
 
-namespace modules {
+namespace server\modules {
 
-    use DateTimeImmutable;
     use PDO;
     use PDOException;
 
